@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: mongoDB
+  data:
+    mongodb:
+      host: localhost
+      port: 27018
+      database: storingDB
+      username: test
+      password: test
+      authentication-database: admin
+      uri: mongodb://test:test@localhost:27018/
+  kafka:
+    bootstrap-servers: localhost:9092
+
+server:
+  servlet:
+    context-path: /api
+  port: 8086
