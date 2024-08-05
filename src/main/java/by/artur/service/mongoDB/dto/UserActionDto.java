@@ -15,6 +15,6 @@ public class UserActionDto {
 
     private String action;
 
-    private LocalDateTime date;
+    private LocalDateTime actionsDate;
 
 }
