@@ -22,4 +22,8 @@ public class UserActionService {
         return userActionRepository.findAll();
     }
 
+    public void saveUserAction(UserAction userAction) {
+        userActionRepository.save(userAction);
+    }
+
 }

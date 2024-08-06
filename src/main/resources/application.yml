@@ -12,6 +12,11 @@ spring:
       uri: mongodb://test:test@localhost:27018/
   kafka:
     bootstrap-servers: localhost:9092
+  rabbitmq:
+    host: localhost
+    virtual-host: vhost
+    username: test
+    password: test
 
 server:
   servlet:
