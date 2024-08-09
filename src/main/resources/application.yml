@@ -1,6 +1,6 @@
 spring:
   application:
-    name: mongoDB
+    name: MONGODB
   data:
     mongodb:
       host: localhost
@@ -17,6 +17,13 @@ spring:
     virtual-host: vhost
     username: test
     password: test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+    instance:
+      preferIpAddress: true
 
 server:
   servlet:

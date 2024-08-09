@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface UserActionRepository extends MongoRepository<UserAction, String> {
 
-    Optional<UserAction> findByUserId(Long userId);
+    Optional<UserAction> findByUserId(String userId);
 }

@@ -1,6 +1,6 @@
 package by.artur.service.mongoDB.service;
 
-import by.artur.service.mongoDB.entity.UserAction;
+import by.artur.service.mongoDB.dto.UserActionDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +8,6 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.UUID;
 
 import static by.artur.service.mongoDB.utils.StringUtil.MQ_QUEUE_NAME;
 
@@ -21,13 +20,10 @@ public class MQService {
     private final ObjectMapper objectMapper;
 
     @RabbitListener(queues = {MQ_QUEUE_NAME})
-    public void listen(Object dto) throws IOException {
-        log.info("Message from mq : {}", dto);
-        UserAction userAction = objectMapper.readValue((byte[]) dto, UserAction.class);
-        log.info("UserAction from mq : {}", userAction);
-        userAction.setId(UUID.randomUUID().toString());
-        log.info("user action from mq : {}", userAction);
-        userActionService.saveUserAction(userAction);
+    public void listen(Object object) throws IOException {
+        log.info("Message from mq : {}", object);
+        UserActionDto dto = objectMapper.readValue((byte[]) object, UserActionDto.class);
+        userActionService.saveUserAction(dto);
     }
 
 }
