@@ -6,14 +6,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-@Document("user_actions")
+@Document(collection = "user_actions")
 @Data
 public class UserAction {
 
     @Id
     private String id;
 
-    private Long userId;
+    private String userId;
 
     private String action;
 

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class UserActionDto {
 
-    private Long userId;
+    private String userId;
 
     private String action;
 

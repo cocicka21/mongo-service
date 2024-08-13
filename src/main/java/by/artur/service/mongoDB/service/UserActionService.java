@@ -20,8 +20,6 @@ public class UserActionService {
     private final UserActionRepository userActionRepository;
     private final ModelMapper mapper;
 
-
-    //TODO
     public UserAction getUserAction(String userId) {
         return userActionRepository.findByUserId(userId).orElseThrow(() -> new NotFoundException("Action with user not found"));
     }

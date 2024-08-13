@@ -18,7 +18,7 @@ public class UserActionController {
     private final UserActionService userActionService;
 
     @GetMapping("/{userId}")
-    public UserAction getUserAction(@PathVariable("userId") String userId) {
+    public UserAction getUserAction(@PathVariable String userId) {
         return userActionService.getUserAction(userId);
     }
 
